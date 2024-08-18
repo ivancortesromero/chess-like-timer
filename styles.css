@@ -11,6 +11,8 @@ body {
 button {
     margin: 5px;
     padding: 10px;
+    font-size: 1em;
+    cursor: pointer;
 }
 
 #timersContainer {
@@ -27,4 +29,12 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* Add styling for the new "Next" button to match the existing buttons */
+#nextTimer {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 10em;
+    cursor: pointer;
 }

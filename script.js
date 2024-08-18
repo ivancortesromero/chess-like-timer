@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const timerTimeInput = document.getElementById('timerTime');
     const createTimersButton = document.getElementById('createTimers');
     const startTimersButton = document.getElementById('startTimers');
+    const nextTimerButton = document.getElementById('nextTimer');
     const timersContainer = document.getElementById('timersContainer');
 
     let timers = [];
@@ -28,18 +29,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         startTimersButton.disabled = false;
+        nextTimerButton.disabled = true;
     });
 
     startTimersButton.addEventListener('click', () => {
         if (timerInterval) clearInterval(timerInterval);
         startTimer(currentPlayer);
+        nextTimerButton.disabled = false;
     });
 
-    document.addEventListener('keydown', (event) => {
-        if (event.code === 'Space') {
-            event.preventDefault();
-            stopTimer();
-        }
+    nextTimerButton.addEventListener('click', () => {
+        stopTimer();
     });
 
     function startTimer(playerIndex) {
